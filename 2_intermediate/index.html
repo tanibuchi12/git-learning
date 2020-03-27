@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Git-Lesson</title>
+    <link href="../assets/vendor/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/lesson.css" rel="stylesheet" />
+    <script src="../assets/vendor/jquery-3.4.1.js"></script>
+    <script src="../assets/vendor/bootstrap.bundle.js"></script>
+    <script
+      src="https://kit.fontawesome.com/49643727db.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body data-spy="scroll" data-target="#side-bar">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="../index.html">Gitを学ぼう</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar-menu"
+        aria-controls="navbar-menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-menu">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">トップページ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../1_beginner/index.html">1.初級編</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">2.中級編</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../3_advanced/index.html">3.上級編</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /Header -->
+    <!-- Content -->
+    <div class="container">
+      <div class="row">
+        <!-- SideBar -->
+        <div class="col-md-4">
+          <nav
+            id="side-bar"
+            class="navbar navbar-light bg-light flex-column position-fixed"
+          >
+            <a class="navbar-brand" href="#">2.中級編</a>
+            <nav class="nav nav-pills flex-column">
+              <a class="nav-link" href="#g2-1">2-1.ブランチの基本</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ml-3" href="#g2-1-1">ブランチとは</a>
+                <a class="nav-link ml-3" href="#g2-1-2">masterブランチ</a>
+              </nav>
+              <a class="nav-link" href="#g2-2">2-2.ブランチの切り替え</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ml-3" href="#g2-2-1">チェックアウト</a>
+                <a class="nav-link ml-3" href="#g2-2-2">スタッシュ</a>
+              </nav>
+              <a class="nav-link" href="#g2-3">(未作成)2-3.タグ</a>
+            </nav>
+          </nav>
+        </div>
+        <!-- /SideBar -->
+
+        <div class="col-md-8">
+          <h1>2.中級編</h1>
+          <h2 id="g2-1">2-1.ブランチの基本</h2>
+          <p class="pt-2">
+            システム開発では、１つのソフトウェアに対して複数のメンバーが機能追加やバグ修正を同時に行うことがある<br />また、複数のリリースバージョンが存在する状態で、それぞれを保守しなければならないこともある
+          </p>
+          <p>
+            並行して行われる複数の機能追加やバージョン管理を支援するため、Gitにはブランチという機能がある
+          </p>
+          <h3 id="g2-1-1">ブランチとは</h3>
+          <p>
+            ブランチとは、<strong class="text-primary"
+              >作業履歴を分岐して記録するためのもの</strong
+            ><br />分岐したブランチは他ブランチの影響を受けないため、同じリポジトリ内で複数の変更を同時に進めていくことができる
+          </p>
+          <img
+            src="../assets/img/git-branch_1.png"
+            class="img-fluid img-thumbnail"
+            alt="ブランチ"
+          />
+          <p class="pt-3">
+            分岐したブランチは他のブランチと合流(マージ)することで、１つのブランチにまとめ直すことができる
+          </p>
+          <h5>平行作業のイメージ</h5>
+          <ol>
+            <li>
+              チームのメンバーは、メインのブランチから自分の作業専用のブランチを作成する
+            </li>
+            <li>
+              そして作業の終わったメンバーは、メインのブランチに自分のブランチの変更を取り込む
+            </li>
+          </ol>
+          <p>
+            このようにすることで、他のメンバーの作業による影響を受けることなく、自分の作業に取り込むことができる
+            <br />
+            また、作業単位で履歴を残すことで、問題が発生した場合に原因となる変更箇所の調査や対策を行うことが容易になる
+          </p>
+          <img
+            src="../assets/img/git-branch_2.png"
+            class="img-fluid img-thumbnail"
+            alt="ブランチ"
+          />
+          <h3 id="g2-1-2">masterブランチ</h3>
+          <p>
+            リポジトリに最初のコミットを行うと、Gitはmasterという名前のブランチを作成する<br />その後のコミットはブランチを切り替えるまでmasterブランチに追加されていく
+          </p>
+          <p>
+            masterブランチをプロジェクトの本流ブランチとすることが一般的である
+          </p>
+          <h2 id="g2-2">2-2.ブランチの切り替え</h2>
+          <h3 id="g2-2-1">チェックアウト</h3>
+          <p>
+            チェックアウトとは、<strong class="text-primary"
+              >作業ブランチを切り替える操作</strong
+            >
+          </p>
+          <p>
+            チェックアウトを行うと、まず移動先のブランチ内の最後のコミットの内容がワークツリーに展開される<br />また、チェックアウト後に行ったコミットは、移動後のブランチに対して追加されるようになる
+          </p>
+          <img
+            src="../assets/img/git-checkout.png"
+            class="img-fluid img-thumbnail"
+            alt="チェックアウト"
+          />
+          <h3 id="g2-2-2">スタッシュ</h3>
+          <p>
+            コミット未済の変更内容や新規ファイルがインデックスやワークツリーに存在する状態で、他のブランチへのチェックアウトを行うと、その変更内容は元のブランチから移動先のブランチに対して移動する
+          </p>
+          <p>
+            ただし、移動先のブランチで同じファイルが変更されている場合はチェックアウトに失敗する<br />このような場合は、変更内容を一度コミットするか、またはstashを使って一時的に変更内容を退避させてからチェックアウトする必要がある
+          </p>
+          <p>
+            stashとは、<strong class="text-primary"
+              >ファイルの変更内容を一時的に記録しておく領域</strong
+            >
+          </p>
+          <p>
+            stashを使うことで、ワークキングツリーとインデックス内でコミットされていない変更を一時的に退避させることができる<br />退避させた変更は後から取り出して、元のブランチや別のブランチに反映させることができる
+          </p>
+          <img src="..." class="img-fluid img-thumbnail" alt="スタッシュ" />
+        </div>
+      </div>
+      <a href="../1_beginner/index.html" class="text-info float-left py-3"
+        >1.初級編 <i class="fas fa-arrow-left"></i
+      ></a>
+      <a href="../3_advanced/index.html" class="text-info float-right py-3"
+        >3.上級編 <i class="fas fa-arrow-right"></i
+      ></a>
+    </div>
+    <!-- /Content -->
+  </body>
+</html>

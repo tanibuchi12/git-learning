@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Git-Lesson</title>
+    <link href="../assets/vendor/bootstrap.css" rel="stylesheet" />
+    <link href="../assets/css/lesson.css" rel="stylesheet" />
+    <script src="../assets/vendor/jquery-3.4.1.js"></script>
+    <script src="../assets/vendor/bootstrap.bundle.js"></script>
+    <script
+      src="https://kit.fontawesome.com/49643727db.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body data-spy="scroll" data-target="#side-bar">
+    <!-- Header -->
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+      <a class="navbar-brand" href="../index.html">Gitを学ぼう</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar-menu"
+        aria-controls="navbar-menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-menu">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">トップページ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../1_beginner/index.html">1.初級編</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../2_intermediate/index.html">2.中級編</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">3.上級編</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /Header -->
+    <!-- Content -->
+    <div class="container">
+      <div class="row">
+        <!-- SideBar -->
+        <div class="col-md-4">
+          <nav
+            id="side-bar"
+            class="navbar navbar-light bg-light flex-column position-fixed"
+          >
+            <a class="navbar-brand" href="#">3.上級編</a>
+            <nav class="nav nav-pills flex-column">
+              <a class="nav-link" href="#g3-1">3-1.プルリクエスト</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link ml-3" href="#g3-1-1">プルリクエストとは</a>
+                <a class="nav-link ml-3" href="#g3-1-2"
+                  >プルリクエストのメリット</a
+                >
+                <a class="nav-link ml-3" href="#g3-1-3"
+                  >プルリクエストを利用した開発プロセス</a
+                >
+              </nav>
+            </nav>
+          </nav>
+        </div>
+        <!-- /SideBar -->
+
+        <div class="col-md-8">
+          <h1>3.上級編</h1>
+          <h2 id="g3-1">3-1.プルリクエスト</h2>
+          <p class="pt-2">
+            所属しているチームでコードレビューしてますか？<br />コードレビューする文化は根付いていますか？
+          </p>
+          <p>
+            開発の始めには"必ずコードレビューする"とルールを決めていても、「忙しくてレビューできない」「レビュー対象・変更箇所がわからない」などの理由で形骸化していくことは、よくある話である
+          </p>
+          <p>このように、コードレビューの文化を根付かせることは難しい</p>
+          <p>
+            しかし、Gitのプルリクエストを使うことがコードレビュー文化を根付かせる一助となる
+          </p>
+          <img src="..." class="img-fluid img-thumbnail" alt="開発プロセス" />
+          <h3 id="g3-1-1">プルリクエストとは</h3>
+          <p>
+            プルリクエストとは、<strong class="text-primary"
+              >開発者のローカルリポジトリでの変更を他の開発者に通知し、リモートリポジトリへの取り込みを要求する機能</strong
+            >
+          </p>
+          <ul>
+            <li>プルリクエストは、Git自体ではなく、GitHubが提供する機能</li>
+            <li>GitLabでは、マージリクエストと呼ばれる同様の機能がある</li>
+          </ul>
+          <h5>プルリクエストが提供する機能</h5>
+          <ul>
+            <li>変更内容をレビュー担当者に通知する</li>
+            <li>ソースコードの変更箇所・差分を可視化する</li>
+            <li>ソースコードに関するコミュニケーションの場を提供する</li>
+          </ul>
+          <h3 id="g3-1-2">プルリクエストのメリット</h3>
+          <h3 id="g3-1-3">プルリクエストを利用した開発プロセス</h3>
+          <p>プルリクエストを利用した開発プロセスは、以下の流れとなる</p>
+          <ol>
+            <li>[ 開発者 ] 作業対象のソースを clone または pull する</li>
+            <li>[ 開発者 ] 作業用のブランチを作成する</li>
+            <li>[ 開発者 ] ソースコードを追加・修正する</li>
+            <li>[ 開発者 ] 作業が完了したら add, commit, push する</li>
+            <li>[ 開発者 ] プルリクエストを作成する</li>
+            <li>
+              [ レビュー担当者 ]
+              通知されたプルリクエストから変更を確認しレビューする
+            </li>
+            <li>
+              [ レビュー担当者 ]
+              レビュー結果を判断し、必要に応じて開発者にフィードバックする
+            </li>
+            <li>
+              [ レビュー担当者 ] レビューの結果、問題がない場合はマージする
+            </li>
+            <li>
+              [ レビュー担当者 ]
+              レビューの結果、対応自体が不要となるなど、プルリクエスト自体が必要ない場合はクローズする
+            </li>
+          </ol>
+          <p>
+            上記の3〜7の工程を、必要な分だけ繰り返す<br />その結果、最終的にマージされるソースコードの品質が向上される
+          </p>
+          <img
+            src="../assets/img/git-dev-process_2.png"
+            class="img-fluid img-thumbnail"
+            alt="プルリクエストを利用した開発プロセス"
+          />
+        </div>
+      </div>
+      <a href="../2_intermediate/index.html" class="text-info float-left py-3"
+        >2.中級編 <i class="fas fa-arrow-left"></i
+      ></a>
+    </div>
+    <!-- /Content -->
+  </body>
+</html>
