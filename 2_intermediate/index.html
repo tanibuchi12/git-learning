@@ -69,7 +69,7 @@
                 <a class="nav-link ml-3" href="#g2-2-1">チェックアウト</a>
                 <a class="nav-link ml-3" href="#g2-2-2">スタッシュ</a>
               </nav>
-              <a class="nav-link" href="#g2-3">(未作成)2-3.タグ</a>
+              <!-- <a class="nav-link" href="#g2-3">(未作成)2-3.タグ</a> -->
             </nav>
           </nav>
         </div>
@@ -77,8 +77,8 @@
 
         <div class="col-md-8">
           <h1>2.中級編</h1>
-          <h2 id="g2-1">2-1.ブランチの基本</h2>
-          <p class="pt-2">
+          <h2 id="g2-1" class="mb-3">2-1.ブランチの基本</h2>
+          <p>
             システム開発では、１つのソフトウェアに対して複数のメンバーが機能追加やバグ修正を同時に行うことがある<br />また、複数のリリースバージョンが存在する状態で、それぞれを保守しなければならないこともある
           </p>
           <p>
@@ -92,15 +92,15 @@
           </p>
           <img
             src="../assets/img/git-branch_1.png"
-            class="img-fluid img-thumbnail"
+            class="img-fluid img-thumbnail mb-2"
             alt="ブランチ"
           />
-          <p class="pt-3">
+          <p>
             分岐したブランチは他のブランチと合流(マージ)することで、１つのブランチにまとめ直すことができる
           </p>
           <h5>平行作業のイメージ</h5>
           <ol>
-            <li>
+            <li class="pb-2">
               チームのメンバーは、メインのブランチから自分の作業専用のブランチを作成する
             </li>
             <li>
@@ -114,7 +114,7 @@
           </p>
           <img
             src="../assets/img/git-branch_2.png"
-            class="img-fluid img-thumbnail"
+            class="img-fluid img-thumbnail mb-2"
             alt="ブランチ"
           />
           <h3 id="g2-1-2">masterブランチ</h3>
@@ -136,7 +136,7 @@
           </p>
           <img
             src="../assets/img/git-checkout.png"
-            class="img-fluid img-thumbnail"
+            class="img-fluid img-thumbnail mb-2"
             alt="チェックアウト"
           />
           <h3 id="g2-2-2">スタッシュ</h3>
@@ -154,7 +154,11 @@
           <p>
             stashを使うことで、ワークキングツリーとインデックス内でコミットされていない変更を一時的に退避させることができる<br />退避させた変更は後から取り出して、元のブランチや別のブランチに反映させることができる
           </p>
-          <img src="..." class="img-fluid img-thumbnail" alt="スタッシュ" />
+          <img
+            src="../assets/img/git-stash.png"
+            class="img-fluid img-thumbnail mb-2"
+            alt="スタッシュ"
+          />
         </div>
       </div>
       <a href="../1_beginner/index.html" class="text-info float-left py-3"

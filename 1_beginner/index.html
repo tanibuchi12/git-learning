@@ -110,35 +110,40 @@
           </p>
           <img
             src="../assets/img/logo-git.png"
-            class="img-fluid img-thumbnail"
+            class="img-fluid img-thumbnail mb-3"
             alt="Git"
           />
-          <p class="pt-3">
+          <p>
             ファイルの編集などができ、変更管理をすることができる
           </p>
           <ul>
-            <li>バージョン管理ができる</li>
-            <li>変更内容をコメントと共に残すことができる</li>
-            <li>誰がいつ変更したのか強制的に記録できる</li>
-            <li>バージョン間の差分を確認できる</li>
-            <li>過去の状態に戻すことができる</li>
-            <li>複数の派生(ブランチ)を作ることができる</li>
+            <li class="pb-2">バージョン管理ができる</li>
+            <li class="pb-2">変更内容をコメントと共に残すことができる</li>
+            <li class="pb-2">誰がいつ変更したのか強制的に記録できる</li>
+            <li class="pb-2">バージョン間の差分を確認できる</li>
+            <li class="pb-2">過去の状態に戻すことができる</li>
+            <li class="pb-2">複数の派生(ブランチ)を作ることができる</li>
+            <li class="pb-2">
+              他人の変更を上書きすることを防止することができる
+            </li>
           </ul>
           <h4>GitHubとGitLab</h4>
           <h5>GitHub</h5>
           <img
             src="../assets/img/logo-github.png"
-            class="img-fluid img-thumbnail"
+            class="img-fluid img-thumbnail mb-2"
             alt="GitHub"
           />
           <ul>
-            <li>Gitに、よりチーム開発に適した機能を付け加えたサービス</li>
-            <li>
+            <li class="pb-2">
+              Gitに、よりチーム開発に適した機能を付け加えたサービス
+            </li>
+            <li class="pb-2">
               プロジェクトの課題管理に使えるIssueや、コードレビューを効率化するPull
               Requestといった機能がWeb上から使える
             </li>
-            <li>OSSの公開場所としても活用されている</li>
-            <li>
+            <li class="pb-2">OSSの公開場所としても活用されている</li>
+            <li class="pb-2">
               <a href="https://github.com" target="_blank" class="text-info">
                 https://github.com
               </a>
@@ -147,17 +152,17 @@
           <h5>GitLab</h5>
           <img
             src="../assets/img/logo-gitlab.png"
-            class="img-fluid img-thumbnail"
+            class="img-fluid img-thumbnail mb-2"
             alt="GitLab"
           />
           <ul>
-            <li>
+            <li class="pb-2">
               GitHubのRubyクローンで、GitHubライクなUIでgit管理を実現するOSS
             </li>
-            <li>
+            <li class="pb-2">
               OSSを自前のサーバ上に構築することで利用可能(※GitHubには有償の商用サービスあり)
             </li>
-            <li>
+            <li class="pb-2">
               セキュリティ等々の理由からクラウドサービス利用に制限がある場合、有効な選択肢となる
             </li>
           </ul>
@@ -237,26 +242,28 @@
           </p>
           <h3 id="g1-1-5">分散型と集中型の違い</h3>
           <ul>
-            <li>集中型バージョン管理システム</li>
+            <li class="pb-2">集中型バージョン管理システム</li>
             <ul>
-              <li>CVSやSubversion(SVN)などが該当する</li>
-              <li>ソースコードを管理する「リポジトリ」が全体で1つである</li>
-              <li>
+              <li class="pb-2">CVSやSubversion(SVN)などが該当する</li>
+              <li class="pb-2">
+                ソースコードを管理する「リポジトリ」が全体で1つである
+              </li>
+              <li class="pb-2">
                 そのため、開発者が増えるとそれぞれの変更箇所が競合するなど、リポジトリに不整合が起こることもある
               </li>
             </ul>
             <img
               src="../assets/img/version-centralized.png"
-              class="img-fluid img-thumbnail"
+              class="img-fluid img-thumbnail mb-3"
               alt="集中型バージョン管理システム"
             />
-            <li class="pt-3">分散型バージョン管理システム</li>
+            <li class="pb-2">分散型バージョン管理システム</li>
             <ul>
-              <li>Gitが該当する</li>
-              <li>
+              <li class="pb-2">Gitが該当する</li>
+              <li class="pb-2">
                 全体を統括する「リモートリポジトリ」の他に、開発者ごとに「ローカルリポジトリ」を持つ仕組みになっている
               </li>
-              <li>
+              <li class="pb-2">
                 自分のマシンの中にあるローカルリポジトリに変更を記録し、しかるべきタイミングでリモートリポジトリに変更履歴をアップする
                 <br />
                 これにより、ネットワークが繋がらない環境でもバージョン管理ができ、全体の整合性を保ちやすくなった
